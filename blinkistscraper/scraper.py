@@ -87,11 +87,11 @@ def initialize_driver(
         "--disable-blink-features=AutomationControlled")
 
     if with_ublock:
-        chrome_options.add_extension(
-            os.path.join(os.getcwd(), "bin", "ublock", "ublock-extension.crx")
-        )
+        path = os.path.join("C:/Users/daan_/OneDrive/Documenten/GitHub/blinkist-scraper/", "bin", "ublock", "ublock-extension.crx")
+        print(path)
+        chrome_options.add_extension(path)
 
-    logs_path = os.path.join(os.getcwd(), "logs")
+    logs_path = os.path.join("C:/Users/daan_/OneDrive/Documenten/GitHub/blinkist-scraper/", "logs")
     if not (os.path.isdir(logs_path)):
         os.makedirs(logs_path)
 
@@ -140,7 +140,7 @@ def initialize_driver(
         # scroll down (for debugging)
         driver.execute_script("window.scrollTo(0, 2000)")
         uBlock_settings_file = str(
-            os.path.join(os.getcwd(), "bin", "ublock", "ublock-settings.txt")
+            os.path.join("C:/Users/daan_/OneDrive/Documenten/GitHub/blinkist-scraper/", "bin", "ublock", "ublock-settings.txt")
         )
         driver.find_element_by_id(
             "restoreFilePicker").send_keys(uBlock_settings_file)
